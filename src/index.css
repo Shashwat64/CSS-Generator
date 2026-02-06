@@ -147,8 +147,50 @@ button:hover, .active{
   height: 600px;
   width: 100%;
   gap: 40px;
-
 }
+
+fieldset{
+  border: none;
+}
+
+legend{
+  float: left;
+  margin: 15px 0;
+}
+
+/* input[type=number].num-input{
+  width: 60px;
+  padding: 6px;
+  font-size: 14px;
+  float: right;
+} */
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.num-input {
+  width: 80px;
+}
+
+.range-input {
+  width: 100%;
+}
+
+
+/* .user-input-section input{
+  width: 100%;
+  margin: 10px 0;
+} */
 
 .user-input-section{
   background-color: rgb(232, 230, 230);
@@ -161,10 +203,6 @@ button:hover, .active{
   padding: 30px;
 }
 
-.user-input-section input{
-  width: 100%;
-  margin: 10px 0;
-}
 
 .output-section{
   background-color: rgb(232, 230, 230);
