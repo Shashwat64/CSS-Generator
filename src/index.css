@@ -66,3 +66,109 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0 ;
+  background-color: #0f172a;
+  color: #e5e7eb;           
+}
+
+header{
+  background-color: #111827;
+  margin: 0px;
+  padding:  30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e5e7eb;
+  box-shadow: 10px 10px 1 white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  
+}
+
+main{
+  margin: 0px;
+  background-color: #0f172a;
+  background-color: rgb(164, 164, 164);
+  color: #e5e7eb;
+  color: black;
+  height: 800px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-part{
+  margin: 0;
+}
+
+.navbar{
+  margin: 0;
+  padding: 10px 30px;
+  background-color: rgb(232, 230, 230);
+  border-radius: 10px;
+  padding: 40px 20px;
+}
+
+.main-ui{
+  margin: 0;
+  /* padding: 10px 30px; */
+  display: flex;
+  flex-grow: 1;
+  height: 500px;
+  width: 100%;
+  gap: 40px;
+
+}
+
+.user-input-section{
+  background-color: rgb(232, 230, 230);
+  height: 100%;
+  width: 40%;
+  border-radius: 10px;
+}
+
+.output-section{
+  background-color: rgb(232, 230, 230);
+  height: 100%;
+  flex-grow: 1;
+  border-radius: 10px;
+  /* width: 60%; */
+  
+}
+
+
+.css-code-section{
+  margin: 0;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.css-code{
+  background-color: rgb(232, 230, 230);
+  width: 60%;
+  padding: 30px 0;
+}
+
+
+
+footer{
+  display: flex;
+  /* align-items: center; */
+  margin: 0px;
+  padding: 10px 30px;
+  background-color: #172554;
+  background-color: #1e293b;
+  background-color: #020617;
+  background-color: #1f2937;
+  height: 100px;
+
+}
