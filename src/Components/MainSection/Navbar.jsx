@@ -1,7 +1,7 @@
 export default function Navbar(){
   return(
     <nav className="navbar">
-      <button>Trial</button>
+      <button className="active">Box Shadow</button>
     </nav>
   )
 }
