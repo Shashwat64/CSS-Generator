@@ -5,7 +5,7 @@ const data = [
       Horizontal: 0,
       Vertical: 8,
       Blur: 24,
-      spread: 0,
+      Spread: 0,
     },
     min:{
       Horizontal: -100,
