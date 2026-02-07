@@ -1,9 +1,11 @@
 import { useState } from "react";
 import data from "../../data/data";
 
-export default function MainUI() {
+export default function MainUI({}) {
   // Use the full data array in state
   const [value, setValue] = useState(data[0]);
+
+  console.log(value)
 
   console.log(data[0], value.properties)
 
@@ -62,8 +64,15 @@ export default function MainUI() {
       </div>
 
       <div className="output-section">
-        <h3>Current values:</h3>
-        <pre>{JSON.stringify(value, null, 2)}</pre>
+        <div className="output-div" style={
+          {
+            WebkitBoxShadow:`${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px rgba(66, 68, 90, 1)`,
+            MozBoxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px rgba(66, 68, 90, 1)`,
+            boxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px rgba(66, 68, 90, 1)`
+          }
+        }>
+
+        </div>
       </div>
     </section>
   );

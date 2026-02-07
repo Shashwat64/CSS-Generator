@@ -97,7 +97,7 @@ header>span{
 main{
   margin: 0px;
   background-color: #0f172a;
-  background-color: rgb(205, 204, 204);
+  background-color: #0F172A;
   color: #e5e7eb;
   color: black;
   height: 1000px;
@@ -121,6 +121,7 @@ main{
   margin: 0;
   padding: 10px 30px;
   background-color: rgb(232, 230, 230);
+  background-color: #1E293B;
   border-radius: 10px;
   padding: 40px 20px;
 }
@@ -194,6 +195,7 @@ legend{
 
 .user-input-section{
   background-color: rgb(232, 230, 230);
+  background-color: #1E293B;
   height: 100%;
   width: 30%;
   border-radius: 10px;
@@ -201,16 +203,29 @@ legend{
   flex-direction: column;
   /* align-items: center; */
   padding: 30px;
+  color: #F1F5F9;
 }
 
 
 .output-section{
   background-color: rgb(232, 230, 230);
+  background-color: #1E293B;
   height: 100%;
   flex-grow: 1;
   border-radius: 10px;
   /* width: 60%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+}
+.output-div{
+  background-color: rgb(205, 204, 204);
+  background-color: #334155;
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 24px -7px rgb(132, 133, 144);
 }
 
 
@@ -226,6 +241,8 @@ legend{
   background-color: rgb(232, 230, 230);
   width: 60%;
   padding: 30px 10px;
+  color: #e5e7eb;
+  background-color: #334155;
 }
 
 
