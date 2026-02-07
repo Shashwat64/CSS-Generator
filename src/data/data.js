@@ -2,7 +2,7 @@ const data = [
   {
     name: 'Box Shadow',
     properties:{
-      Horizontal: 0,
+      Horizontal: 7,
       Vertical: 8,
       Blur: 24,
       Spread: 0,

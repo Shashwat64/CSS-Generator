@@ -1,10 +1,12 @@
-export default function CSSCode(){
+export default function CSSCode(props){
   return(
     <section className="css-code-section">
-      CSS Code: 
-      <button>Copy</button>
+      <div className="copy-btn-div">
+        CSS Code: 
+        <button>Copy</button>
+      </div>
       <div className="css-code">
-        This is CSS Code
+        {props.cssCode}
       </div> 
     </section>
   )
