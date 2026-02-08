@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import data from "../../data/data";
+import { useEffect, useState } from "react"
+import data from "../../data/data"
 
 export default function MainUI(props) {
   // Use the full data array in state
-  const [value, setValue] = useState(data[0]);
+  const [value, setValue] = useState(data[0])
 
   // console.log(value)
 
@@ -11,18 +11,18 @@ export default function MainUI(props) {
 
   // Handle changes for any property of any object
   const handleChange = (propKey, e) => {
-    const newValue = Number(e.target.value);
+    const newValue = Number(e.target.value)
 
     setValue((prev) => {
-      let newData = {...prev}; // copy array
+      let newData = {...prev} 
       newData = {
-        ...newData, // copy object
+        ...newData, 
         properties: {
-          ...newData.properties, // copy properties
-          [propKey]: newValue, // update specific property
+          ...newData.properties, 
+          [propKey]: newValue, 
         },
-      };
-      return newData;
+      }
+      return newData
     })
   }
 
@@ -83,5 +83,5 @@ export default function MainUI(props) {
         </div>
       </div>
     </section>
-  );
+  )
 }
