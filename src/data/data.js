@@ -9,7 +9,8 @@ const data = [
       Color: {
         value: '#FFFFFF',
         opacity: 0.6
-      }
+      },
+      Inset: false
     },
     min:{
       Horizontal: -100,

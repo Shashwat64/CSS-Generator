@@ -120,8 +120,7 @@ export default function BoxShadow({value,setValue, setCssCode}){
                   name="color-value"
                 />
                 </div>
-
-
+                <div className="top-row">
                   <label htmlFor={`${key}-opacity`}>{key} Opacity</label>
         
                   {/* Number input */}
@@ -136,9 +135,36 @@ export default function BoxShadow({value,setValue, setCssCode}){
                     name="color-opacity"
                   />
 
+                </div>
+
+
               </div>
             )
-        }else{
+        }else if(key==="Inset"){
+          return(
+            <div className="control" key={key}>
+              <label>
+                Inset
+                <input 
+                  type="checkbox" 
+                  onChange={()=> 
+                    setValue(prev => ({
+                      ...prev,
+                      properties: {
+                        ...prev.properties,
+                        Inset: !prev.properties.Inset
+                      }
+                    }))
+                  }
+                  checked={value.properties.Inset}
+                />
+              </label>
+            </div>
+          )
+        }
+        
+        
+        else{
 
             return (
               <div className="control" key={key}>
@@ -175,9 +201,9 @@ export default function BoxShadow({value,setValue, setCssCode}){
 
   useEffect(()=>{
     setCssCode(<>
-           <p>-webkit-box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
-           <p>-moz-box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
-           <p>box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
+           <p>-webkit-box-shadow: {value.properties.Inset ? 'inset ' : ''} {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
+           <p>-moz-box-shadow: {value.properties.Inset ? 'inset ' : ''} {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
+           <p>box-shadow: {value.properties.Inset ? 'inset ' : ''} {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
         </>)
   },[value.properties])
 
@@ -192,9 +218,9 @@ export default function BoxShadow({value,setValue, setCssCode}){
         <div className="output-section">
           <div className="output-div" style={
             {
-              WebkitBoxShadow:`${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`,
-              MozBoxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`,
-              boxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`
+              WebkitBoxShadow: `${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`,
+              MozBoxShadow: `${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`,
+              boxShadow: `${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`
             }
           }>
 
