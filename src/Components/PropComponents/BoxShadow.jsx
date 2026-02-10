@@ -23,15 +23,60 @@ export default function BoxShadow({value,setValue, setCssCode}){
 
     let newValue
 
-    if(e.target.name!=='color')
-    {
-      newValue = raw === "" ? "" : Number(raw)
-    }else{
+    if(e.target.name==='color-value'){
       newValue = raw
+
+      console.log(newValue)
+
+      setValue((prev) => {
+        let newData = {...prev} 
+        newData = {
+          ...newData, 
+          properties: {
+            ...newData.properties, 
+            Color:{
+              ...newData.properties.Color,
+              value:newValue
+            }
+          },
+        }
+        return newData
+      })
     }
 
+    else if(e.target.name==='color-opacity'){
+      // newValue = raw === "" ? "" : Number(raw)
 
-    setValue((prev) => {
+      newValue =  raw === '' ? '' : Math.max(0, Math.min(1, Number(raw)))
+      
+      
+
+      // newValue = raw 
+
+
+      console.log(newValue)
+
+      setValue((prev) => {
+        let newData = {...prev} 
+        newData = {
+          ...newData, 
+          properties: {
+            ...newData.properties, 
+            Color:{
+              ...newData.properties.Color,
+              opacity:newValue
+            }
+          },
+        }
+        return newData
+      })
+    }
+    
+    
+    else
+    {
+      newValue = raw === "" ? "" : Number(raw)
+      setValue((prev) => {
       let newData = {...prev} 
       newData = {
         ...newData, 
@@ -42,22 +87,55 @@ export default function BoxShadow({value,setValue, setCssCode}){
       }
       return newData
     })
+    }
+
+
   }
+
+  const hexToRgba = (hex, opacity = 1) => {
+  let color = hex.replace('#', '');
+
+  if (color.length === 3) {
+    color = color.split('').map(char => char + char).join('');
+  }
+
+  const r = parseInt(color.substring(0, 2), 16);
+  const g = parseInt(color.substring(2, 4), 16);
+  const b = parseInt(color.substring(4, 6), 16);
+
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
   
   const inputHtml = Object.entries(value.properties).map(([key, val]) => 
       {
 
         if(key==="Color"){
             return(
-              <div>
+              <div className="control" key={key}>
                 <div className="top-row">
-                  <label htmlFor={`num-${key}`}>{key}</label>
+                  <label htmlFor={`${key}`}>{key}</label>
                 <input 
                   type="color" 
                   onChange={(e) => handleChange(key, e)}
-                  name="color"
+                  name="color-value"
                 />
                 </div>
+
+
+                  <label htmlFor={`${key}-opacity`}>{key} Opacity</label>
+        
+                  {/* Number input */}
+                  <input
+                    id={`num-${key}`}
+                    className="num-input"
+                    type="number"
+                    min='0'
+                    max='1'
+                    value={value.properties[key].opacity} // read from state
+                    onChange={(e) => handleChange(key, e)}
+                    name="color-opacity"
+                  />
+
               </div>
             )
         }else{
@@ -97,9 +175,9 @@ export default function BoxShadow({value,setValue, setCssCode}){
 
   useEffect(()=>{
     setCssCode(<>
-           <p>-webkit-box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {value.properties.Color};</p>
-           <p>-moz-box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {value.properties.Color};</p>
-           <p>box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {value.properties.Color};</p>
+           <p>-webkit-box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
+           <p>-moz-box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
+           <p>box-shadow: {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
         </>)
   },[value.properties])
 
@@ -114,9 +192,9 @@ export default function BoxShadow({value,setValue, setCssCode}){
         <div className="output-section">
           <div className="output-div" style={
             {
-              WebkitBoxShadow:`${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${value.properties.Color}`,
-              MozBoxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${value.properties.Color}`,
-              boxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${value.properties.Color}`
+              WebkitBoxShadow:`${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`,
+              MozBoxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`,
+              boxShadow: `${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`
             }
           }>
 

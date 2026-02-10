@@ -6,7 +6,10 @@ const data = [
       Vertical: 8,
       Blur: 24,
       Spread: 0,
-      Color: '#FFFFFF'
+      Color: {
+        value: '#FFFFFF',
+        opacity: 0.6
+      }
     },
     min:{
       Horizontal: -100,
