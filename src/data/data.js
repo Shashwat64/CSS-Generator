@@ -1,11 +1,12 @@
 const data = [
   {
-    name: 'Box Shadow',
+    name: 'BoxShadow',
     properties:{
       Horizontal: 7,
       Vertical: 8,
       Blur: 24,
       Spread: 0,
+      Color: '#FFFFFF'
     },
     min:{
       Horizontal: -100,
