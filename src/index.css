@@ -125,6 +125,10 @@ main{
   padding: 40px 20px;
 }
 
+.nav-btn{
+  margin: 10px;
+}
+
 button{
   color: #5270dd;
   padding: 10px 20px;

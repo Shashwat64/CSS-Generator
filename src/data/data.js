@@ -1,6 +1,6 @@
 const data = [
   {
-    name: 'BoxShadow',
+    name: 'Box Shadow',
     properties:{
       Horizontal: 7,
       Vertical: 8,
@@ -26,7 +26,11 @@ const data = [
     }
 
   },{
-    name: 'text'
+    name: 'Text Shadow'
+  },{
+    name: 'Flexbox'
+  },{
+    name: 'Border Radius'
   }
 ]
 
