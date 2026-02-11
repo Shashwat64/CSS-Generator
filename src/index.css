@@ -210,6 +210,74 @@ legend{
   color: #F1F5F9;
 }
 
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 12px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+/* .toggle-wrapper,
+.toggle-wrapper * {
+  user-select: none;
+} */
+
+/* The switch container */
+.switch-ui {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* Hide checkbox */
+.switch-ui input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Track */
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 34px;
+  transition: 0.3s;
+}
+
+/* Circle */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* Checked styles */
+.switch-ui input:checked + .slider {
+  background: rgb(2,117,255);
+}
+
+.switch-ui input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+input[type="color"]{
+  border: none;
+}
+
+
+
 
 .output-section{
   background-color: rgb(232, 230, 230);

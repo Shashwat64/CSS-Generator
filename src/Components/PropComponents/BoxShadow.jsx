@@ -142,22 +142,26 @@ export default function BoxShadow({value,setValue, setCssCode}){
             )
         }else if(key==="Inset"){
           return(
-            <div className="control" key={key}>
-              <label>
-                Inset
-                <input 
-                  type="checkbox" 
-                  onChange={()=> 
-                    setValue(prev => ({
-                      ...prev,
-                      properties: {
-                        ...prev.properties,
-                        Inset: !prev.properties.Inset
-                      }
-                    }))
-                  }
-                  checked={value.properties.Inset}
-                />
+            <div className="switch" key={key}>
+              <label className="toggle-wrapper">
+                <span className="label-text">Inset</span>
+
+                <span className="switch-ui">
+                  <input
+                    type="checkbox"
+                    onChange={() =>
+                      setValue(prev => ({
+                        ...prev,
+                        properties: {
+                          ...prev.properties,
+                          Inset: !prev.properties.Inset
+                        }
+                      }))
+                    }
+                    checked={value.properties.Inset}
+                  />
+                  <span className="slider"></span>
+                </span>
               </label>
             </div>
           )
