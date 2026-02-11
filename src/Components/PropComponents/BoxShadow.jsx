@@ -202,11 +202,11 @@ export default function BoxShadow({value,setValue, setCssCode}){
   
 
   useEffect(()=>{
-    setCssCode(<>
-           <p>-webkit-box-shadow: {value.properties.Inset ? 'inset ' : ''} {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
-           <p>-moz-box-shadow: {value.properties.Inset ? 'inset ' : ''} {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
-           <p>box-shadow: {value.properties.Inset ? 'inset ' : ''} {value.properties.Horizontal}px {value.properties.Vertical}px {value.properties.Blur}px {value.properties.Spread}px {hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};</p>
-        </>)
+    setCssCode(
+           `-webkit-box-shadow: ${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};
+-moz-box-shadow: ${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};
+box-shadow: ${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${value.properties.Spread}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)};`
+    )
   },[value.properties])
 
   return(

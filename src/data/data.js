@@ -25,6 +25,8 @@ const data = [
       spread: 50,
     }
 
+  },{
+    name: 'text'
   }
 ]
 

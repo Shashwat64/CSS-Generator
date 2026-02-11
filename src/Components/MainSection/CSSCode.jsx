@@ -2,7 +2,7 @@ export default function CSSCode(props){
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(textToCopy);
+      await navigator.clipboard.writeText(props.cssCode);
       console.log("Copied!");
     } catch (err) {
       console.error("Failed to copy:", err);
@@ -15,9 +15,9 @@ export default function CSSCode(props){
         <p>CSS Code: </p>
         <button onClick={handleCopy}>Copy</button>
       </div>
-      <div className="css-code">
-        {props.cssCode}
-      </div> 
+      <pre className="css-code" style={{ whiteSpace: 'pre-wrap' }}>
+        <code>{props.cssCode}</code>
+      </pre>
     </section>
   )
 }

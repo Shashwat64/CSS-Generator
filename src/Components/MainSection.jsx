@@ -10,12 +10,11 @@ import {useState, useEffect, useRef} from 'react'
 
 export default function MainSection(){
 
-   const [cssCode, setCssCode] = useState(
-      <>
-         <p>-webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);</p>
-         <p>-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);</p>
-         <p>box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);</p>
-      </>
+   const [cssCode, setCssCode] = useState(`
+         -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+         -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+         box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+      ` 
    )
 
    return(
