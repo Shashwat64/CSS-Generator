@@ -26,7 +26,14 @@ const data = [
     }
 
   },{
-    name: 'Text Shadow'
+    name: 'Text Shadow',
+    properties:{
+      Text:'Text shadow',
+      Horizontal: 7,
+      Vertical: 8,
+      Blur: 24,
+      Color: '#FFFFFF'
+    }
   },{
     name: 'Flexbox'
   },{

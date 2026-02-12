@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 
+import { hexToRgba } from '../../data/helperFunctions'
+
 import data from '../../data/data'
 
 
-export default function BoxShadow({value,setValue, setCssCode}){
+export default function BoxShadow({value ,setValue, setCssCode}){
 
   // const [value, setValue] = useState(data[0])
 
@@ -92,20 +94,6 @@ export default function BoxShadow({value,setValue, setCssCode}){
 
   }
 
-  const hexToRgba = (hex, opacity = 1) => {
-  let color = hex.replace('#', '');
-
-  if (color.length === 3) {
-    color = color.split('').map(char => char + char).join('');
-  }
-
-  const r = parseInt(color.substring(0, 2), 16);
-  const g = parseInt(color.substring(2, 4), 16);
-  const b = parseInt(color.substring(4, 6), 16);
-
-  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-};
-  
   const inputHtml = Object.entries(value.properties).map(([key, val]) => 
       {
 

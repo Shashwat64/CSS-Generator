@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import data from "../../data/data"
 
 import BoxShadow from "../PropComponents/BoxShadow"
+import TextShadow from "../PropComponents/TextShadow"
 
 export default function MainUI(props) {
   // Use the full data array in state
@@ -21,7 +22,8 @@ export default function MainUI(props) {
 
   return (
     <section className="main-ui">
-      <BoxShadow value={value} setValue={setValue} setCssCode={props.setCssCode} />
+      {props.activeProp === "Box Shadow" && <BoxShadow value={value} setValue={setValue} setCssCode={props.setCssCode} />}
+      {props.activeProp === "Text Shadow" && <TextShadow value={value} setValue={setValue} setCssCode={props.setCssCode} />}
     </section>
   )
 }

@@ -17,7 +17,7 @@ export default function MainSection(){
    return(
       <main>
          <Navbar activeProp={activeProp} setActiveProp={setActiveProp}/> 
-         <MainUI setCssCode={setCssCode} /> 
+         <MainUI setCssCode={setCssCode} activeProp={activeProp}/> 
          <CSSCode cssCode={cssCode}/> 
       </main>
    )
