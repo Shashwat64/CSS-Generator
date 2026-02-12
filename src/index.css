@@ -304,6 +304,11 @@ input[type="color"]{
   box-shadow: 8px 8px 24px -7px rgb(132, 133, 144);
 }
 
+.text-shadow-output{
+  color: #e5e7eb;
+  font-size: 3rem;
+}
+
 
 .css-code-section{
   margin: 0 0 0 auto;

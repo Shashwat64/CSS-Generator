@@ -6,6 +6,7 @@ import CSSCode from "./MainSection/CSSCode"
 //Import Hooks
 import {useState, useEffect, useRef} from 'react'
 
+import data from '../data/data'
 
 
 export default function MainSection(){
@@ -13,11 +14,14 @@ export default function MainSection(){
    const [cssCode, setCssCode] = useState()
 
    const [activeProp, setActiveProp] = useState('Box Shadow')
+   const [value, setValue] = useState(data.find((prop,i)=>activeProp===prop.name))
+
+   console.log(activeProp)
 
    return(
       <main>
-         <Navbar activeProp={activeProp} setActiveProp={setActiveProp}/> 
-         <MainUI setCssCode={setCssCode} activeProp={activeProp}/> 
+         <Navbar activeProp={activeProp} setActiveProp={setActiveProp} value={value} setValue={setValue}/> 
+         <MainUI setCssCode={setCssCode} activeProp={activeProp} value={value} setValue={setValue}/> 
          <CSSCode cssCode={cssCode}/> 
       </main>
    )

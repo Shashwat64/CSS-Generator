@@ -4,13 +4,36 @@ import data from "../../data/data"
 import BoxShadow from "../PropComponents/BoxShadow"
 import TextShadow from "../PropComponents/TextShadow"
 
-export default function MainUI(props) {
-  // Use the full data array in state
-  const [value, setValue] = useState(data[0])
+export default function MainUI({value, setValue, activeProp, setCssCode}) {
+  // const [value, setValue] = useState(data.find((prop,i)=>props.activeProp===prop.name))
+  
+  // const [value, setValue] = useState(data.find((prop,i)=>props.activeProp===prop.name))
+  console.log(value, activeProp)
 
-  // console.log(value)
+  useEffect(() => {
+  console.log("activeProp:", activeProp);
 
-  console.log(data[0], value.properties)
+  console.log(
+    "all names:",
+    data.map(d => d.name)
+  );
+
+  const found = data.find(
+    prop => prop.name === activeProp
+  );
+
+  console.log("found:", found);
+
+  setValue(found);
+}, [activeProp]);
+
+  
+  console.log(value, activeProp)
+
+  // useEffect(()=>{
+  //   setValue(data.find((prop,i)=>props.activeProp===prop.name))
+  // }
+  // ,[props.activeProp])
 
   // useEffect(()=>{
   //   props.setCssCode(<>
@@ -22,8 +45,8 @@ export default function MainUI(props) {
 
   return (
     <section className="main-ui">
-      {props.activeProp === "Box Shadow" && <BoxShadow value={value} setValue={setValue} setCssCode={props.setCssCode} />}
-      {props.activeProp === "Text Shadow" && <TextShadow value={value} setValue={setValue} setCssCode={props.setCssCode} />}
+      {activeProp === "Box Shadow" && <BoxShadow value={value} setValue={setValue} setCssCode={setCssCode} />}
+      {activeProp === "Text Shadow" && <TextShadow value={value} setValue={setValue} setCssCode={setCssCode} activeProp={activeProp}/>}
     </section>
   )
 }

@@ -7,7 +7,12 @@ export default function Navbar(props){
     <button 
       key={i} 
       className={prop.name === props.activeProp ? "active nav-btn" : "nav-btn"}
-      onClick={()=>(props.setActiveProp(prop.name))}
+      onClick={() => {
+        const found = data.find(p => p.name === prop.name);
+        props.setActiveProp(prop.name);
+        props.setValue(found);
+      }}
+
     >
       {prop.name}
     </button>

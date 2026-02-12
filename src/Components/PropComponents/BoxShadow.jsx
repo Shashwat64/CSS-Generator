@@ -94,6 +94,8 @@ export default function BoxShadow({value ,setValue, setCssCode}){
 
   }
 
+  console.log(value)
+
   const inputHtml = Object.entries(value.properties).map(([key, val]) => 
       {
 
@@ -168,7 +170,7 @@ export default function BoxShadow({value ,setValue, setCssCode}){
                     id={`num-${key}`}
                     className="num-input"
                     type="number"
-                    min={value.min[key]}
+                    min={value?.min?.[key]}
                     max={value.max[key]}
                     value={value.properties[key]} // read from state
                     onChange={(e) => handleChange(key, e)}
