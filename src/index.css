@@ -152,7 +152,7 @@ button:active{
   /* padding: 10px 30px; */
   display: flex;
   flex-grow: 1;
-  height: 600px;
+  height: 750px;
   width: 100%;
   gap: 40px;
 }
