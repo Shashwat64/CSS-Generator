@@ -52,7 +52,7 @@ const data = [
   },{
     name: 'Flexbox',
     properties:{
-      Display:["Display","flex","inline-flex"],
+      display:["Display","flex","inline-flex"],
       flexDirection:["Flex Direction","row","column", "row-reverse","column-reverse"],
       flexWrap: ["Flex Wrap","wrap", "no-wrap", "wrap-reverse"],
       justifyContent: ["Justify Content","flex-start", "flex-end", "center", "space-between", "space-around"],

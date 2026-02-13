@@ -17,6 +17,8 @@ export default function Flexbox({value, setValue, setCssCode, activeProp}){
 
   
   function handleChange(property, value) {
+  console.log(property, value)
+
     setFlexStyles(prev => ({
       ...prev,
       [property]: value
@@ -72,7 +74,7 @@ export default function Flexbox({value, setValue, setCssCode, activeProp}){
           </div>
         </div>
 
-        <div className="output-section">
+        <div className="flex-output-section">
           <div 
             className='output-flexbox'
             style={flexStyles}
