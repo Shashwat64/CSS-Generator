@@ -137,6 +137,11 @@ button{
   border-radius: 5px;
   transition: all 0.05s;
 }
+button:disabled{
+  pointer-events: none;
+  background-color: #e5e7eb;
+  opacity: 0.6;
+}
 
 button:hover, .active{
   background-color: #5270dd;
@@ -212,6 +217,7 @@ legend{
   /* align-items: center; */
   padding: 30px;
   color: #F1F5F9;
+  min-width: 400px;
 }
 
 .toggle-wrapper {
@@ -294,7 +300,13 @@ input[type="color"]{
   color: #e5e7eb;
 
 }
-
+.flexbox-btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
 
 
 
@@ -331,7 +343,7 @@ input[type="color"]{
   width: 90%;
   height: 90%;
   padding: 50px;
-  display: flex;
+  /* display: flex; */
   gap: 10px;
 }
 
@@ -349,6 +361,8 @@ input[type="color"]{
 .long-flex-elem{
     height: 150px;
 }
+
+
 
 
 .css-code-section{

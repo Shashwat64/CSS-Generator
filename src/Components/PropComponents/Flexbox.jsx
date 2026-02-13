@@ -13,18 +13,23 @@ export default function Flexbox({value, setValue, setCssCode, activeProp}){
     alignContent: "flex-start"
   })
 
+  // const[noOfElem, setNoOfElem] = useState(value.element)
+
+  
   function handleChange(property, value) {
     setFlexStyles(prev => ({
       ...prev,
       [property]: value
     }))
   }
-
+  
   console.log(flexStyles)
-
-
+  
+  
   
   const [extraElem, setExtraElem] = useState(value.element)
+  
+  console.log(extraElem)
 
   const inputHtml = Object.entries(value.properties).map(([key, val],i)=>{
 
@@ -48,7 +53,6 @@ export default function Flexbox({value, setValue, setCssCode, activeProp}){
     )
   })
 
-  console.log(value, activeProp, extraElem)
 
   return(
 
@@ -56,6 +60,16 @@ export default function Flexbox({value, setValue, setCssCode, activeProp}){
       <div className="user-input-section">
           <h2>CSS {value.name}</h2>
           {inputHtml}
+          <div className='flexbox-btn-container'>
+            <button 
+              disabled={extraElem>9?true:false}
+              onClick={()=>(setExtraElem(prev=>prev+1))}
+              >Add Element</button>
+            <button 
+              disabled={extraElem<2?true:false}
+              onClick={()=>(setExtraElem(prev=>prev-1))}
+            >Remove Element</button>
+          </div>
         </div>
 
         <div className="output-section">
@@ -65,11 +79,12 @@ export default function Flexbox({value, setValue, setCssCode, activeProp}){
           >
             <div className='short-flex-elem'>1</div>
             <div className='long-flex-elem'>2</div>
-            {[...Array(value.element)].map((_, index) => (
+            {[...Array(extraElem)].map((_, index) => (
               <div className='short-flex-elem'>{index+3}</div>
             ))}
           </div>
         </div>
+
     </>
       
   )
