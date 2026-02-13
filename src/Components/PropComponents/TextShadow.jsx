@@ -1,5 +1,7 @@
 import { hexToRgba } from '../../data/helperFunctions'
 
+import {useEffect} from 'react'
+
 export default function TextShadow({value ,setValue, setCssCode, activeProp}){
 
 
@@ -74,7 +76,11 @@ export default function TextShadow({value ,setValue, setCssCode, activeProp}){
     
     else
     {
-      newValue = raw === "" ? "" : Number(raw)
+      if(e.target.name==='text-content'){
+        newValue=raw
+      }else{
+        newValue = raw === "" ? "" : Number(raw)
+      }
       setValue((prev) => {
       let newData = {...prev} 
       newData = {
@@ -125,6 +131,20 @@ export default function TextShadow({value ,setValue, setCssCode, activeProp}){
 
               </div>
             )
+        }else if(key==='Text'){
+          return(
+              <div className="control" key={key}>
+                <div className="top-row">
+                  <label htmlFor={`${key}`}>{key}</label>
+                <input 
+                  type="text" 
+                  onChange={(e) => handleChange(key, e)}
+                  value={value.properties[key]} 
+                  name="text-content"
+                />
+                </div>
+              </div>
+            )
         }
         else{
 
@@ -161,7 +181,11 @@ export default function TextShadow({value ,setValue, setCssCode, activeProp}){
     }
   )
 
-  console.log( `textShadow: ${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`)
+useEffect(()=>{
+    setCssCode(
+           `textShadow:${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`
+    )
+  },[value.properties])
 
   return(
 
@@ -176,7 +200,7 @@ export default function TextShadow({value ,setValue, setCssCode, activeProp}){
             style={{
               textShadow: `${value.properties.Inset ? 'inset ' : ''} ${value.properties.Horizontal}px ${value.properties.Vertical}px ${value.properties.Blur}px  ${hexToRgba(value.properties.Color.value, value.properties.Color.opacity)}`
             }}
-          >Text Content</p>
+          >{value.properties.Text}</p>
         </div>
     </>
       

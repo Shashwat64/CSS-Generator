@@ -28,6 +28,7 @@ const data = [
   },{
     name: 'Text Shadow',
     properties:{
+      Text:'Text Content',
       Horizontal: 7,
       Vertical: 8,
       Blur: 24,
