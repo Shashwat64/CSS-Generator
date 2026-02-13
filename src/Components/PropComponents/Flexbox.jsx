@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { hexToRgba } from '../../data/helperFunctions'
 
@@ -54,6 +54,17 @@ export default function Flexbox({value, setValue, setCssCode, activeProp}){
     </div>
     )
   })
+
+  useEffect(()=>{
+    setCssCode(
+      `display: ${flexStyles.display};
+flex-direction: ${flexStyles.flexDirection};
+flex-wrap: ${flexStyles.flexWrap};
+justify-content: ${flexStyles.justifyContent};
+align-items: ${flexStyles.alignItems};
+align-content: ${flexStyles.alignContent};`
+    )
+  },[flexStyles])
 
 
   return(
