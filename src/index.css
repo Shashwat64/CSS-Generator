@@ -281,6 +281,22 @@ input[type="color"]{
 }
 
 
+.flexbox-containers{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexbox-containers select{
+  width: 150px;
+  padding: 5px;
+  background-color: #334155;
+  border: none;
+  color: #e5e7eb;
+
+}
+
+
+
 
 
 .output-section{
@@ -307,6 +323,31 @@ input[type="color"]{
 .text-shadow-output{
   color: #e5e7eb;
   font-size: 3rem;
+}
+
+/* For Flex Component only */
+.output-flexbox{
+  border: 1px dashed #5270dd;
+  width: 90%;
+  height: 90%;
+  padding: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.short-flex-elem, .long-flex-elem{
+  background-color: #e5e7eb;
+  width: 100px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.short-flex-elem{
+  height: 100px;
+}
+
+.long-flex-elem{
+    height: 150px;
 }
 
 

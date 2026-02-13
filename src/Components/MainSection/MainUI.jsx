@@ -3,6 +3,7 @@ import data from "../../data/data"
 
 import BoxShadow from "../PropComponents/BoxShadow"
 import TextShadow from "../PropComponents/TextShadow"
+import Flexbox from "../PropComponents/Flexbox"
 
 export default function MainUI({value, setValue, activeProp, setCssCode}) {
   // const [value, setValue] = useState(data.find((prop,i)=>props.activeProp===prop.name))
@@ -47,6 +48,10 @@ export default function MainUI({value, setValue, activeProp, setCssCode}) {
     <section className="main-ui">
       {activeProp === "Box Shadow" && <BoxShadow value={value} setValue={setValue} setCssCode={setCssCode} />}
       {activeProp === "Text Shadow" && <TextShadow value={value} setValue={setValue} setCssCode={setCssCode} activeProp={activeProp}/>}
+
+      {activeProp === "Flexbox" && <Flexbox value={value} setValue={setValue} setCssCode={setCssCode} activeProp={activeProp}/>}
+
+
     </section>
   )
 }
