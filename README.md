@@ -14,7 +14,7 @@ A simple, interactive tool for generating CSS box-shadow code with real-time pre
 - CSS
 
 ## 🚀 Live Demo
-<a href="https://css-generator-byshashwat.netlify.app/" target="_blank">View Live Project</a>
+[View Live Project](https://css-generator-byshashwat.netlify.app/)
 
 ## 💻 How to Use
 1. Adjust the shadow properties using sliders or input fields
@@ -31,7 +31,7 @@ npm start
 ```
 
 ## 📸 Screenshot
-[CSS Generator Screenshot] (./src/assests/BoxShadowScreenshot.png)
+[CSS Generator Screenshot](./src/assests/BoxShadowScreenshot.png)
 
 ## 🎯 Future Improvements
 - Mobile-responsive design
