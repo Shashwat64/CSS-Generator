@@ -31,7 +31,7 @@ npm start
 ```
 
 ## 📸 Screenshot
-[CSS Generator Screenshot](./src/assests/BoxShadowScreenshot.png)
+[CSS Generator Screenshot](./src/assets/BoxShadowScreenshot.png)
 
 ## 🎯 Future Improvements
 - Mobile-responsive design
