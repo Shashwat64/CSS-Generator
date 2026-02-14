@@ -4,6 +4,7 @@ import data from "../../data/data"
 import BoxShadow from "../PropComponents/BoxShadow"
 import TextShadow from "../PropComponents/TextShadow"
 import Flexbox from "../PropComponents/Flexbox"
+import BorderRadius from "../PropComponents/BorderRadius"
 
 export default function MainUI({value, setValue, activeProp, setCssCode}) {
   // const [value, setValue] = useState(data.find((prop,i)=>props.activeProp===prop.name))
@@ -47,10 +48,12 @@ export default function MainUI({value, setValue, activeProp, setCssCode}) {
   return (
     <section className="main-ui">
       {activeProp === "Box Shadow" && <BoxShadow value={value} setValue={setValue} setCssCode={setCssCode} />}
+
       {activeProp === "Text Shadow" && <TextShadow value={value} setValue={setValue} setCssCode={setCssCode} activeProp={activeProp}/>}
 
       {activeProp === "Flexbox" && <Flexbox value={value} setValue={setValue} setCssCode={setCssCode} activeProp={activeProp}/>}
 
+      {activeProp === "Border Radius" && <BorderRadius value={value} setValue={setValue} setCssCode={setCssCode} activeProp={activeProp}/>}
 
     </section>
   )

@@ -61,7 +61,25 @@ const data = [
     },
     element:2
   },{
-    name: 'Border Radius'
+    name: 'Border Radius',
+    properties:{
+      topLeft:20,
+      topRight:20,
+      bottomRight:20,
+      bottomLeft:20
+    },
+    min:{
+      topLeft:0,
+      topRight:0,
+      bottomRight:0,
+      bottomLeft:0
+    },
+    max:{
+      topLeft:100,
+      topRight:100,
+      bottomRight:100,
+      bottomLeft:100
+    }
   }
 ]
 

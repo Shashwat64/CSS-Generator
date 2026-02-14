@@ -12,7 +12,7 @@ import data from '../data/data'
 export default function MainSection(){
 
    const [cssCode, setCssCode] = useState()
-   const [activeProp, setActiveProp] = useState('Flexbox')
+   const [activeProp, setActiveProp] = useState('Box Shadow')
    const [value, setValue] = useState(data.find((prop,i)=>activeProp===prop.name))
 
    console.log(activeProp)

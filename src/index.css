@@ -342,7 +342,6 @@ input[type="color"]{
   height: 250px;
   width: 250px;
   border-radius: 10px;
-  box-shadow: 8px 8px 24px -7px rgb(132, 133, 144);
 }
 
 .text-shadow-output{
