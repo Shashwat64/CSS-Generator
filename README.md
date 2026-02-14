@@ -27,7 +27,7 @@ A simple, interactive tool for generating CSS box-shadow code with real-time pre
 git clone [https://github.com/Shashwat64/CSS-Generator]
 cd [css-generator-byshashwat]
 npm install
-npm start
+npm run dev 
 ```
 
 ## 📸 Screenshot
@@ -37,4 +37,4 @@ npm start
 - Mobile-responsive design
 - Multiple shadow layers
 - Preset shadow styles
-- Dark mode
+- Toggle between light and dark mode
